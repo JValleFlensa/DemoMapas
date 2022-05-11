@@ -10,7 +10,7 @@ namespace DemoMapas
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Views.GPSView();
         }
 
         protected override void OnStart()

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:DemoMapas.ViewModels"
+             Title="GPS"
+             x:Class="DemoMapas.Views.GPSView">
+
+    <ContentPage.BindingContext>
+        <vm:GPSViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10">
+                <Label Text="Latitude" />
+                <Entry Text="{Binding Latitude}" />
+                <Label Text="Longitude" />
+                <Entry Text="{Binding Longitude}" />
+                <Button Command="{Binding GetCurrentLocationCommand}" 
+                        Text="Get Current Location" />
+                <Button Command="{Binding GetAddressFromLocationCommand}" 
+                        Text="Get Address from Location" />
+                <Button Command="{Binding ShowExternalMapCommand}" 
+                        Text="Show External Map" />
+                <Label Text="Address" />
+                <Editor
+                    HeightRequest="300"
+                    Text="{Binding Address}"
+                    VerticalOptions="Center" />
+                <Button Command="{Binding GetLocationFromAddressCommand}" 
+                        Text="Get Location from Address" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
